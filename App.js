@@ -6,7 +6,7 @@ import { StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView} from 'r
 export default function App() {
   const [number1, onChangeNumber1 ]=React.useState(null);
   const [number2, onChangeNumber2 ]=React.useState(null);
-  const [restult, setResult]=React.useState(null);
+  const [result, setResult]=React.useState(null);
   const addition = () => {
     const num=parseInt(number1)+parseInt(number2);
     setResult(num);
@@ -17,10 +17,9 @@ export default function App() {
   }
   return (
          
-    <View style style={{flex:1}} >
-      <View style={{flex:1}}></View>
+    <View style={styles.outerContainer}>
       <Text style={styles.center}>
-        Result: {restult}
+        Result: {result}
       </Text>
 
       <View  style={styles.inputContainer}>
@@ -43,34 +42,41 @@ export default function App() {
         </View>
 
         <View style={styles.buttonContainer}>
-        <Button style={styles.button} title =" + " onPress={addition}/>
-        <Text>&nbsp;&nbsp;&nbsp;</Text>
-        <Button style={styles.button} title =" - " onPress={subtraction}/>
+        <Button  title =" + " onPress={addition}/>
+        <Button  title =" - " onPress={subtraction}/>
         </View>
-        <View style={{flex:2}}></View>
       </View>
   );  
 }
 const styles = StyleSheet.create({
+  outerContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 
 
   buttonContainer: {
+    
     flexDirection:'row',
-     justifyContent:'center',
-    // justifyContent: 'space-between',
+    justifyContent: 'space-between',
+     width: 80, 
+    height: 40,
   },
-  button:{
-    margin:20,
-  },
+  
   inputContainer: {
     flexDirection:'column',
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-
   center: {
     textAlign:'center',
   },
   input: {
     height: 40,
+    width: 200,
     margin: 12,
     borderWidth: 1,
     padding: 10,
