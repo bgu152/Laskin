@@ -3,7 +3,29 @@ import React from 'react';
 import useState from 'react';
 import { StyleSheet, Text, View, Button, Alert, TextInput, SafeAreaView} from 'react-native';
 
+
+function HomeScreen(){
+  return(
+    <View style ={{flex:1, justifyContent:'center', alignItems:'center'}}>
+      <Text>Home Screen</Text>
+    </View>
+
+  );
+}
+
+function SettingsScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Settings!</Text>
+    </View>
+  );
+}
+
+const Tab = createBottomTabNavigator();
+
+
 export default function App() {
+
   const [number1, onChangeNumber1 ]=React.useState(null);
   const [number2, onChangeNumber2 ]=React.useState(null);
   const [result, setResult]=React.useState(null);
